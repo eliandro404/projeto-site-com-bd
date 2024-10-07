@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF CAPITAL</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="logo">IFCapital</h2>
+        <div class="navbar-menu">
+            <nav class="navbar">
+                <a href="#">Início</a>
+                <a href="#">Planos</a>
+                <a href="#">Sobre</a>
+            </nav>        
+        </div>
+        <button class="botao-login">
+            <span>Entrar</span>
+        </button>
+        <div class="navbar-btn">
+            <span class="icon"><ion-icon name="reorder-three-outline"></ion-icon></span>
+        </ion-icon>       
+        </div>
+    </header>
+    <div class="wrapper-login-registro">
+        <div class="form-box login">
+            <h2>Entrar</h2>
+            <form action="dashboard.html">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
+                    <input type="user" placeholder="Usuário" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" placeholder="Senha" required>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Lembrar de mim</label>
+                    <a href="#">Esqueci a Senha</a>
+                </div>
+                <button type="submit" class="botao" >Login</button>
+                <div class="login-register">
+                    <p>É novo aqui? <a href="#" class="register-link">Cadastre-se</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registrar-se</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
+                    <input type="user" placeholder="Usuário" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></ion-icon></span>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" placeholder="Senha" required>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Concordo com os termos (aceito vender minha alma)</label>
+                </div>
+                <button type="submit" class="botao">Cadastrar</button>
+                <div class="login-register">
+                    <p>Já possui uma conta? <a href="#" class="login-link">Logue aqui</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="home-page">
+        <section class="homepage-banner">
+            <div class="homepage-banner_slides-wrapper">
+                <div class="slides">
+                    <img id="slide=1" src="https://c0.wallpaperflare.com/path/495/559/584/analysis-analytics-analyze-app-281ff4cd2e69df3f4dbfc382ceb782cb.jpg" alt="">
+                    <img id="slide=2" src="https://c0.wallpaperflare.com/path/104/291/751/blur-car-close-up-cryptocurrency-0f2f57ceb6054985e776c0fdc92bc45b.jpg" alt="">
+                    <img id="slide=3" src="https://c1.wallpaperflare.com/path/411/87/644/chart-trading-courses-forex-07d9d04bde45727e3292d8e0cbe768f5.jpg">
+                </div>
+            </div>
+            <div class="indicators">
+                <button id="btn1" class="indicator" type="button">
+                    <div class="loading-container"></div>
+                </button>
+                <button id="btn2" class="indicator" type="button">
+                    <div class="loading-container"></div>
+                </button>
+                <button id="btn3" class="indicator" type="button">
+                    <div class="loading-container"></div>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

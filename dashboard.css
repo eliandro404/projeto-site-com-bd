@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex; 
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #292929; 
+}
+
+.barra-lateral {  
+    position: fixed;
+    background: rgb(41, 41, 41);
+    /* border: ; */
+    width: 70px;
+    height: 100vh;
+    left: 0;
+    transition: width .5s ease;
+    z-index: 10;
+    border-top: 1px solid #373a45;  
+    border-bottom: 1px solid #373a45; 
+} 
+
+.barra-lateral.active { 
+    width: 270px;
+    background: linear-gradient(to right,rgba(41, 41, 41, 1) 40%, rgba(41, 41, 41, 0.3) 100%);
+    backdrop-filter: blur(5px);
+} 
+
+.itens { 
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    padding-top: 1em;
+} 
+
+.itens.active {
+    width:  270px;
+} 
+
+.item {  
+    display: flex;
+    align-items: center;  
+    width: 100%; 
+    height: 50px; 
+    color: #d1d4dc;
+    cursor: pointer;
+} 
+
+.item:hover {  
+    width: 115%;
+    background-color: #d1d4dc;
+    color: black;
+    transition: all 0.3s ease;
+} 
+
+.logo {
+    padding: 8px;
+    height: 39px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #d1d4dc;
+    user-select: none;
+    text-align: center;
+    align-items: center;
+    background-color: #131722;
+    border-bottom: 1px solid rgb(55, 58, 69, 0.7); 
+}
+ 
+.item-icone {  
+    display: flex;
+    font-size: 2.1rem; 
+    margin-left: 0.5em;  
+    justify-self: center;
+}
+
+.item-texto { 
+    opacity: 0%;
+    font-size: 1.2em; 
+    margin-left: 10px; 
+    user-select: none;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.item-texto.active{ 
+    opacity: 100%;
+}
+
+.btn-al { 
+    width: 0px;
+    height: 0px;
+}
+
+
+.btn-al:hover { 
+    width: 270px;
+}
+
+.item .btn-alternar { 
+    width: 70px;
+    height: 50px;  
+    position: fixed;
+    bottom: 0;
+    background: #d1d4dc;
+    border: none;
+    border-radius: 0px; 
+    font-size: 1.3em;
+    color: #162938;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item .btn-alternar.active {
+    width: 270px;
+    transform: scaleX(-1);
+}
+
+.trade-container {
+    display: flex;
+    padding-left: 68px;
+    width: 100%;
+    height: 100vh;
+}
+
+.tradingview-widget-container {
+    flex: 1;
+    display: block;
+    padding-right: 270px;
+}
+
+.order-bar {
+    position: absolute;
+    right: 0;
+    width: 272px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #292929;
+    border-top: 1px solid #373a45;  
+    border-bottom: 1px solid #373a45; 
+}
+
+.retangulo {
+    background-color: #131722;
+    height: 38px;
+    
+    /* aplicar essa borda aqui ao head do widget */
+} 
+
+.campos {
+    flex: 1;
+    width: 272;
+    display: flex;
+    flex: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.input-box {
+    width: 175px;
+    height: 35px;
+    color: white;
+    background-color: #131722;
+    border: none;
+    padding-inline-start: 10px;
+}
+
+.label-campos {
+    font-size: 0.8em;
+    width: 55px;
+    color: white;
+    padding: 5px;
+}
+
+.button-group {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 90px; */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-block: 45px;
+}
+
+.btn {
+    border: none;
+    border-radius: 0px;
+    width: 90px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.6); 
+    /* transition: .3s ease; */
+    /* user-select: none; */
+}
+
+.btn:hover {
+    opacity: 0.9;
+    border: 2px solid #162938;
+    
+    /* outline: auto;
+    outline-color: #131722;
+    outline-offset: 2px; */
+}
+
+.ss {
+    height: 35px;
+}
+
+.ms {
+    height: 50px;  
+}
+
+.mini-chart {
+    flex: 1;
+    user-select: none;
+}
+
+
+.compra {
+    background-color: #FFD700;
+}
+
+.c-mercado {
+    background-color: #FF7F50;
+}
+
+.zerar {
+    background-color: #FF5733;
+}
+
+.invert {
+    background-color: #A9A9A9;
+}
+
+.venda {
+    background-color: #28A745;
+}
+
+.v-mercado {
+    background-color: #007BFF;
+}
