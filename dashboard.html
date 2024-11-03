@@ -11,25 +11,26 @@
 </head>
 
 <body>
+    <!-- barra lateral-->
    <div class="barra-lateral">
         <div class="logo"><span>IFC</span></div>
         
         <div class="itens">
-            <div class="item" id="user-bar">
+            <div class="item" id="user-menu">
                 <span class="item-icone"><ion-icon name="person-circle-outline"></ion-icon></ion-icon></span>
                 <span class="item-texto">Perfil</span>  
             </div> 
-            <div class="item">
+            <div class="item" id="config-menu">
                 <span class="item-icone"><ion-icon name="settings-outline"></ion-icon></span>
                 <span class="item-texto">Configurações</span>  
             </div> 
             <a href="login.html">
-                <div class="item">
+                <div class="item" id="exit">
                     <span class="item-icone"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="item-texto">Sair</span>  
                 </div> 
             </a>
-            <div class="item btn-al">
+            <div class="item btn-al" id="open-bar">
                 <button class="btn-alternar">
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </button>
@@ -37,8 +38,17 @@
         </div>
     </div>
 
-    <div class="side-bar">
-        <div class="user-menu"></div>
+    <!-- menus da barra lateral -->
+    <div class="itens-menus">
+        <div class="menu">
+            <div class="close">
+                <button class="close-button">
+                    <ion-icon name="close-sharp" class="close-icon"></ion-icon>
+                </button>
+            </div>
+            <div class="user"></div>
+            <div class="config"></div>
+        </div>
     </div>
 
     <!-- Gráfico principal -->
@@ -69,10 +79,6 @@
         </div>
         
         <div class="order-bar">
-            <!-- <div class="logo-image">
-                <img src="images/logo-small.png" alt="img-1">
-            </div> -->
-            
             <div class="retangulo"></div>
             
             <!-- Campos de seleção -->

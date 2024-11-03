@@ -1,4 +1,4 @@
-.side-bar {
+.itens-menus {
     position: absolute;
     display: flex;
     align-items: center;
@@ -10,12 +10,12 @@
     overflow: hidden;
 }
 
-.user-menu.active {
+.menu.active {
     top: 30px;
     opacity: 100%;
 }
 
-.user-menu {
+.menu {
     position: inherit;
     top: 200px;
     width: 620px;
@@ -25,5 +25,67 @@
     backdrop-filter: blur(20px);
     /* border-radius: 30px; */
     opacity: 0%;
+    display: flex;
+    overflow: hidden;
     transition: all 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    left: 559px;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.close-button {
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem; 
+    background-color: #d1d4dc;
+    border: none;
+    border-bottom-left-radius: 15px;
+    cursor: pointer;
+}
+
+.close-icon {
+    width: 100%;
+    height: 100%;
+    color: #202324;
+    transition: all .3s ease;
+}
+
+.close-icon:hover {
+    color: red;
+}
+
+.user {
+    position: inherit;
+    transform: translateX(-620px);
+    background-color: black;
+    width: 620px;
+    height: 650px;
+    opacity: 60%;
+    transition: all 0.3s ease;
+}
+
+.config {
+    position: inherit;
+    transform: translateX(-620px);
+    background-color: white;
+    width: 620px;
+    height: 650px;
+    opacity: 60%;
+    /* display: none; */
+    transition: all 0.3s ease;
+}
+
+.user.active {
+    transform: translateX(0px);
+}
+
+.config.active {
+    transform: translateX(0px)
 }
