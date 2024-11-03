@@ -7,6 +7,7 @@
     <title>IFCapital</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/side-bar.css">
 </head>
 
 <body>
@@ -14,7 +15,7 @@
         <div class="logo"><span>IFC</span></div>
         
         <div class="itens">
-            <div class="item">
+            <div class="item" id="user-bar">
                 <span class="item-icone"><ion-icon name="person-circle-outline"></ion-icon></ion-icon></span>
                 <span class="item-texto">Perfil</span>  
             </div> 
@@ -34,6 +35,10 @@
                 </button>
             </div>
         </div>
+    </div>
+
+    <div class="side-bar">
+        <div class="user-menu"></div>
     </div>
 
     <!-- Gráfico principal -->
@@ -119,6 +124,7 @@
             </div>
     </div>
 
+    <script src="js/side-bar.js"></script>
     <script src="js/dashboard.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

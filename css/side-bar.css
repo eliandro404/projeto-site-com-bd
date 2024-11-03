@@ -1,0 +1,29 @@
+.side-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.user-menu.active {
+    top: 30px;
+    opacity: 100%;
+}
+
+.user-menu {
+    position: inherit;
+    top: 200px;
+    width: 620px;
+    height: 650px;
+    background: transparent;
+    border: 1px solid #d1d4dc;
+    backdrop-filter: blur(20px);
+    /* border-radius: 30px; */
+    opacity: 0%;
+    transition: all 0.3s ease;
+}
