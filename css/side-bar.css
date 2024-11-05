@@ -12,6 +12,11 @@
 
 .menu.active {
     /* left: 0px; */
+    left: 0px;
+    opacity: 100%;
+}
+
+.menu.l.active {
     left: 270px;
     opacity: 100%;
 }
@@ -23,7 +28,7 @@
     height: 100vh;
     background: transparent;
     /* acho que posso remover a transição de opacidade */
-    /* opacity: 0%;  */
+    opacity: 0%; 
     display: flex;
     flex-direction: column;
     overflow: hidden;
