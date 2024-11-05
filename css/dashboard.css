@@ -152,9 +152,8 @@ body {
 
 .retangulo {
     background-color: #131722;
-    height: 38px;
-    
-    /* aplicar essa borda aqui ao head do widget */
+    height: 39px;
+    border-bottom: 1px solid rgb(55, 58, 69, 0.7);
 } 
 
 .campos {
