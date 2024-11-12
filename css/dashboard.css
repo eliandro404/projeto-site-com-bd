@@ -24,7 +24,7 @@ body {
     width: 70px;
     height: 100vh;
     left: 0;
-    transition: width .5s ease;
+    transition: width .3s ease;
     z-index: 10;
     border-top: 1px solid #373a45;  
     border-bottom: 1px solid #373a45; 
@@ -54,14 +54,19 @@ body {
     height: 50px; 
     color: #d1d4dc;
     cursor: pointer;
-} 
+}
+
+.item.active {
+    background-color: #d1d4dc;
+    color: black;
+}
 
 .item:hover {  
-    width: 115%;
+    /* width: 115%; */
     background-color: #d1d4dc;
     color: black;
     transition: all 0.3s ease;
-} 
+}
 
 .logo {
     padding: 8px;
@@ -117,7 +122,7 @@ body {
     font-size: 1.3em;
     color: #162938;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 .item .btn-alternar.active {
