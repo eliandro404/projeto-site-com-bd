@@ -5,145 +5,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFCapital</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/side-bar.css">
 </head>
 
 <body>
-    <!-- barra lateral-->
-   <div class="barra-lateral">
-        <div class="logo"><span>IFC</span></div>
-        
-        <div class="itens">
-            <div class="item" id="user-menu">
-                <span class="item-icone"><ion-icon name="person-circle-outline"></ion-icon></ion-icon></span>
-                <span class="item-texto">Perfil</span>  
-            </div> 
-            <div class="item" id="config-menu">
-                <span class="item-icone"><ion-icon name="settings-outline"></ion-icon></span>
-                <span class="item-texto">Configurações</span>  
-            </div> 
-            <a href="login.html">
-                <div class="item" id="exit">
-                    <span class="item-icone"><ion-icon name="log-out-outline"></ion-icon></span>
-                    <span class="item-texto">Sair</span>  
-                </div> 
-            </a>
-            <div class="item btn-al" id="open-bar">
-                <button class="btn-alternar">
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                </button>
+    <div id="app-root">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <ion-icon name="cellular-outline"></ion-icon>
             </div>
-        </div>
-    </div>
-
-    <!-- menus da barra lateral -->
-    <div class="itens-menus">
-        <div class="menu">
-            <div class="close">
-                <button class="close-button">
-                    <ion-icon name="close-sharp" class="close-icon"></ion-icon>
+            <div class="sidebar-buttons" id="sidebar-buttons">
+                <button class="sidebar-button" id="chart-menu">
+                    <span class="sidebar-button-icon">
+                        <ion-icon name="bar-chart-outline"></ion-icon>
+                    </span>
+                    <span>gráfico</span>
                 </button>
-            </div> 
-            <div class="user">
-                <div class="section">
-                    <div class="avatar"></div>
-                </div>
-                <div class="section"></div>
-                <div class="section"></div>
-            </div>
-            <div class="config"></div>
-        </div>
-    </div>
 
-    <!-- Gráfico principal -->
-    <div class="trade-container">
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {
-                "autosize": true,
-                "symbol": "NASDAQ:AAPL",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "Dark",
-                "style": "1",
-                "locale": "br",
-                "backgroundColor": "rgba(41, 41, 41, 1)",
-                "gridColor": "rgba(39, 39, 39, 0.06)",
-                "hide_legend": true,
-                "allow_symbol_change": true,
-                "save_image": false,
-                "calendar": false,
-                "show_popup_button": true,
-                "popup_width": "1000",
-                "popup_height": "650",
-                "support_host": "https://www.tradingview.com"
-            }
-            </script>
-        </div>
-        
-        <div class="order-bar">
-            <div class="retangulo"></div>
-            
-            <!-- Campos de seleção -->
-            <div class="campos">
-                <label class="label-campos" for="qtd">QTD: </label>
-                <input type="number" id="qtd" class="input-box" value="1" min="1" step="1">
+                <button class="sidebar-button" id="profile-menu">
+                    <span class="sidebar-button-icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="sidebar-button-text">PERFIL</span>  
+                </button>
 
-                <label class="label-campos" for="preco">PREÇO: </label>
-                <input type="number" id="preco" class="input-box" min="1" step="0.01" placeholder="Digite o preço">
-
-                <label class="label-campos" for="estrat">ESTRAT: </label>
-                <select id="estrat" class="input-box">
-                    <option value="nenhum">&lt;Nenhum&gt;</option>
-                </select>
                 
-                <label class="label-campos" for="total">TOTAL: </label>
-                <input type="number" id="total" class="input-box" value="5635.00" min="1" step="0.01" readonly>
+                <button class="sidebar-button" id="help-menu">
+                    <span class="sidebar-button-icon">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </span>
+                    <span class="sidebar-button-text">SUPORTE</span> 
+                </button>
+                
+                <button class="sidebar-button" id="settings-menu" data-action="settings">
+                    <span class="sidebar-button-icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="sidebar-button-text">AJUSTES</span> 
+                </button>
+
+                <button class="sidebar-button" id="more-menu">
+                    <span class="sidebar-button-icon">
+                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                    </span>
+                    <span>Mais</span>
+                </button>
+            
             </div>
 
-            <!-- Botões -->
-            <div class="button-group">
-                <button class="btn ms compra">Compra</button>
-                <button class="btn ms c-mercado">Compra<br>Mercado</button>
-                <button class="btn ss zerar">Zerar</button>
-                <button class="btn ss invert">Invert</button>
-                <button class="btn ms venda">Venda</button>
-                <button class="btn ms v-mercado">Venda<br>Mercado </button>
+            <div class="sidebar-mini-buttons">
+                <button class="sidebar-mini-button" id="expand-button">
+                    <span class="sidebar-mini-button-icon">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </span>
+                </button>
+                <button class="sidebar-mini-button" id="extra-button">
+                    <span class="sidebar-mini-button-icon">
+                        <ion-icon name="caret-forward-circle-outline"></ion-icon>
+                    </span>
+                </button>
             </div>
+        </div>
 
-            <!-- Mini gráfico -->
-            <div class="mini-chart">
-                <div class="tradingview-widget-container2">
-                <div class="tradingview-widget-container__widget2"></div>
-                <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/" rel="noopener nofollow" target="_blank"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                {
-                "symbol": "FX:EURUSD",
-                "width": "270",
-                "height": "290",
-                "locale": "br",
-                "dateRange": "12M",
-                "colorTheme": "dark",
-                "isTransparent": true,
-                "autosize": false,
-                "largeChartUrl": ""
-                }
-                </script>
+        <div class="sidebar-menu-body">
+            <!-- <div class="menu-body-main">
+
+            </div> -->
+        </div>
+
+        <div class="app-page">
+            <header class="page-header">
+                <div class="temp-div"></div>
+                <div class="temp-div"></div>
+                <div class="temp-div"></div>
+            </header>
+            <main class="page-body">
+                <div class="trading-chart">
+                    <div class="inner-border"></div>
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100">
+                        <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                        {
+                        "autosize": true,
+                        "symbol": "NASDAQ:AAPL",
+                        "interval": "D",
+                        "timezone": "America/Sao_Paulo",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "br",
+                        "gridColor": "rgba(147, 196, 125, 0.06)",
+                        "backgroundColor": "rgba(29, 30, 45, 255)",
+                        "hide_top_toolbar": true,
+                        "allow_symbol_change": true,
+                        "save_image": false,
+                        "calendar": false,
+                        "hide_volume": true,
+                        "support_host": "https://www.tradingview.com"
+                    }
+                        </script>
+                    </div>
                 </div>
-            </div>
-    </div>
+                <div class="page-sidebar">
+                    <div class="sidebar-section" id="sidebar-upper-section">
+                        
+                    </div>
+                    <div class="sidebar-section" id="mini-trading-chart">
+                        <div class="tradingview-widget-container">
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                            {
+                            "symbol": "FX:EURUSD",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "br",
+                            "dateRange": "12M",
+                            "colorTheme": "dark",
+                            "trendLineColor": "rgba(0,153,129,255)",
+                            "underLineColor": "rgba(0,153,129,0.2)",
+                            "underLineBottomColor": "rgba(0,153,129,0)",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>     
 
-    <script src="js/side-bar.js"></script>
     <script src="js/dashboard.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>
-
-
-
-<!-- https://br.tradingview.com/widget/#ticker -->

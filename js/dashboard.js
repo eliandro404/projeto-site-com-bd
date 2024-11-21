@@ -1,3 +1,32 @@
+const fullscrenBtn = document.getElementById("expand-button")
+const sideBar = document.getElementById("sidebar-buttons")
+const botao = document.getElementById("settings-menu")
+const appPage = document.querySelector(".app-page")
+let paddingApplied = false;
+const sideBarMenu = document.querySelector(".sidebar-menu-body")
+
+botao.addEventListener("click", () => {
+    sideBarMenu.classList.toggle("showing")
+    if (paddingApplied) {
+        appPage.style.paddingLeft = "0px";
+    } else {
+        appPage.style.paddingLeft = "250px";
+    }
+    paddingApplied = !paddingApplied
+})
+
+fullscrenBtn.addEventListener("click", () => {
+    if (document.fullscreenElement) {
+        document.exitFullscreen()
+    } else {
+        document.documentElement.requestFullscreen()
+    }
+})
+
+
+
+
+
 const sidebar = document.querySelector(".barra-lateral")
 const item = document.querySelector(".itens")
 const texto = document.querySelectorAll(".item-texto")
