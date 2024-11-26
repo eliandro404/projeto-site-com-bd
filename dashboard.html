@@ -76,9 +76,39 @@
 
         <div class="app-page">
             <header class="page-header">
-                <div class="temp-div"></div>
-                <div class="temp-div"></div>
-                <div class="temp-div"></div>
+                <div class="tradingview-widget-container">
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                            {
+                            "symbols": [
+                            {
+                                "proName": "FOREXCOM:SPXUSD",
+                                "title": "S&P 500 Index"
+                            },
+                            {
+                                "proName": "FOREXCOM:NSXUSD",
+                                "title": "US 100 Cash CFD"
+                            },
+                            {
+                                "proName": "FX_IDC:EURUSD",
+                                "title": "EUR to USD"
+                            },
+                            {
+                                "proName": "BITSTAMP:BTCUSD",
+                                "title": "Bitcoin"
+                            },
+                            {
+                                "proName": "BITSTAMP:ETHUSD",
+                                "title": "Ethereum"
+                            }
+                            ],
+                            "showSymbolLogo": true,
+                            "isTransparent": true,
+                            "displayMode": "adaptive",
+                            "colorTheme": "dark",
+                            "locale": "br"
+                        }
+                            </script>
+                        </div>
             </header>
             <main class="page-body">
                 <div class="trading-chart">
@@ -107,10 +137,17 @@
                         </script>
                     </div>
                 </div>
+
                 <div class="page-sidebar">
                     <div class="sidebar-section" id="sidebar-upper-section">
-                        
+                        <div class="tabs">
+                            <div class="active"></div>
+                            <button>Compra</button>
+                            <button>Extra 1</button>
+                            <button>Extra 2</button>
+                        </div>
                     </div>
+
                     <div class="sidebar-section" id="mini-trading-chart">
                         <div class="tradingview-widget-container">
                             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>

@@ -165,7 +165,7 @@
 .sidebar-section{
     display: flex;
     flex-grow: 1;
-    background-color: rgba(33,35,48,255);
+    background-color: rgba(43,45,58);
     border-radius: 10px;
 }
 
@@ -173,6 +173,35 @@
     height: 400px;
     flex-grow: 0;
     margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    flex-grow: 1;
+    gap: 5px;
+    background-color: rgba(33,35,48);
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.tabs .active {
+    position: fixed;
+    height: 35px;
+    width: 70px;
+    background-color: rgba(43,45,58);
+    border-radius: 10px 10px 0 0;
+}
+
+.tabs button {
+    height: 35px;
+    width: 70px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .inner-border {
