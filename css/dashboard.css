@@ -14,7 +14,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgba(29, 30, 45, 255); 
+    background-color: rgb(29, 30, 45); 
 }
 
 .sidebar {
@@ -87,7 +87,8 @@
 }   
 
 .sidebar-button:hover {
-    background-color: rgba(41,96,192,255);
+    background-color: rgb(41,96,192);
+    box-shadow: 0 5px 5px rgb(23, 25, 38);
 }
 
 .sidebar-button-icon {
@@ -129,7 +130,7 @@
     justify-content: space-between;
     height: 40px;
     margin: 10px 10px 0;
-    /* background-color: gray; */
+    /* background-color: black; */
 }
 
 .temp-div {
@@ -149,7 +150,7 @@
     display: flex;
     flex-grow: 1;
     height: 100%;
-    background-color: rgba(33,35,48,255);
+    background-color: rgb(33,35,48);
     position: relative;
 }
 
@@ -165,8 +166,9 @@
 .sidebar-section{
     display: flex;
     flex-grow: 1;
-    background-color: rgba(43,45,58);
+    background-color: rgb(43,45,58);
     border-radius: 10px;
+    box-shadow: 0 5px 5px rgb(23, 25, 38);
 }
 
 #sidebar-upper-section {
@@ -180,23 +182,30 @@
     display: flex;
     flex-grow: 1;
     gap: 5px;
-    background-color: rgba(33,35,48);
+    background-color: rgb(43,45,58);
+    /* background-color: rgb(33,35,48); */
     justify-content: center;
     align-items: center;
     height: 35px;
+    position: relative;
 }
 
 .tabs .active {
-    position: fixed;
-    height: 35px;
-    width: 70px;
-    background-color: rgba(43,45,58);
-    border-radius: 10px 10px 0 0;
+    position: absolute;
+    height: 30px;
+    width: 30%;
+    left: 3%;
+    /* background-color: rgb(43,45,58); */
+    background-color: rgb(41,96,192);
+    /* border-radius: 10px 10px 0 0; */
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgb(33, 35, 48);
+    transition: all .3s ease;
 }
 
 .tabs button {
     height: 35px;
-    width: 70px;
+    width: 30%;
     background-color: transparent;
     color: white;
     border: none;
@@ -206,11 +215,11 @@
 
 .inner-border {
     position: absolute;
-    top: 0px; /* Espessura da borda interna */
+    top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    border: 2px solid rgba(29, 30, 45, 255); /* Cor da borda interna */
+    border: 2px solid rgb(29, 30, 45);
     box-sizing: border-box;
     pointer-events: none;
 }
