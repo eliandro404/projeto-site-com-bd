@@ -16,12 +16,12 @@
                 <ion-icon name="cellular-outline"></ion-icon>
             </div>
             <div class="sidebar-buttons" id="sidebar-buttons">
-                <button class="sidebar-button" id="chart-menu">
+                <!-- <button class="sidebar-button" id="chart-menu">
                     <span class="sidebar-button-icon">
                         <ion-icon name="bar-chart-outline"></ion-icon>
                     </span>
                     <span>gráfico</span>
-                </button>
+                </button> -->
 
                 <button class="sidebar-button" id="profile-menu">
                     <span class="sidebar-button-icon">
@@ -142,10 +142,45 @@
                     <div class="sidebar-section" id="sidebar-upper-section">
                         <div class="tabs">
                             <div class="active"></div>
-                            <button class="tab-button" id="buyNSell">Compra</button>
-                            <button class="tab-button" id="extra1">Extra 1</button>
-                            <button class="tab-button" id="extra2">Extra 2</button>
+                            <button class="tab-button" id="buyNSell" onclick="showTrade()">Trade</button>
+                            <button class="tab-button" id="extra1" onclick="hideTrade()">Order</button>
+                            <button class="tab-button" id="extra2" onclick="hideTrade()">GPT</button>
                         </div>
+
+                        <div class="tabs-content">
+                            <div class="buyNSell-content">
+                                <div class="panel" id="balance-panel">
+                                    SALDO: R$4,269.38
+                                </div>
+                                <div class="panel" id="control-panel">
+                                    <span class="floating-text">INVESTIR</span>
+                                    <button onclick="increaseValue()">
+                                        <span class="sidebar-button-icon"><ion-icon name="add-outline"></ion-icon></span>
+                                    </button>
+                                    <input type="text" class="panel-input" value="R$ 10.00">
+                                    <button onclick="decreaseValue()" id="decreaseButton">
+                                        <span class="sidebar-button-icon"><ion-icon name="remove-outline"></ion-icon></span>
+                                    </button>
+                                </div>
+                                <button class="buynsell-button" id="buy-button">
+                                    <span>compra</span>
+                                    <span class="sidebar-button-icon"><ion-icon name="arrow-up-outline"></ion-icon></span>
+                                </button>
+                                <div class="payout">
+                                    <div>Pagamento: </div>
+                                    <b class="payout-value">R$ 18</b>
+                                </div>
+                                <button class="buynsell-button" id="sell-button">
+                                    <span>venda</span>
+                                    <span class="sidebar-button-icon"><ion-icon name="arrow-down-outline"></ion-icon></ion-icon></span>
+                                </button>
+                            </div>   
+                            <div class="extras-content">
+                                <div class="image"></div>
+                                <p>Atualize seu plano para ter acesso a esse conteúdo</p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="sidebar-section" id="mini-trading-chart">

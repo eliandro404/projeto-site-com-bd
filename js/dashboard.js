@@ -42,3 +42,45 @@ fullscrenBtn.addEventListener("click", () => {
         document.documentElement.requestFullscreen()
     }
 })
+
+function increaseValue() {
+    const botao = document.getElementById("decreaseButton")
+    botao.style.cursor = "pointer";  
+    var input = document.querySelector(".panel-input");
+    var inputAtual = parseInt(input.value.replace("R$ ", "")) || 0;
+    input.value = "R$ " + (inputAtual + 5) + ".00";
+
+    var payout = document.querySelector(".payout-value");
+    payout.textContent = "R$ " + ((inputAtual + 5) * 1.8).toFixed(2);    
+}
+
+function decreaseValue() {
+    const botao = document.getElementById("decreaseButton");
+    var input = document.querySelector(".panel-input");
+    var inputAtual = parseInt(input.value.replace("R$ ", "")) || 0;
+    
+    if (inputAtual != "5") {
+        input.value = "R$ " + (inputAtual - 5)+ ".00";
+        var payout = document.querySelector(".payout-value");
+        payout.textContent = "R$ " + ((inputAtual - 5) * 1.8).toFixed(2);
+    }
+    if ((inputAtual-5) == "5") {
+        botao.style.cursor = "not-allowed";  
+    }
+}
+
+function showTrade() {
+    const trade = document.querySelector(".buyNSell-content")
+    const order = document.querySelector(".extras-content")
+    
+    trade.style.display = "flex"
+    order.style.display = "none"; 
+}
+
+function hideTrade() {
+    const trade = document.querySelector(".buyNSell-content")
+    const order = document.querySelector(".extras-content")
+    
+    trade.style.display = "none"
+    order.style.display = "flex"; 
+}   
