@@ -29,14 +29,14 @@
     <div class="wrapper-login-registro">
         <div class="form-box login">
             <h2>Entrar</h2>
-            <form action="dashboard.html">
+            <form action="login.php" method="POST">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
-                    <input type="user" placeholder="Usuário" required>
+                    <input type="user" name="usuario" placeholder="Usuário" required>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" placeholder="Senha" required>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox">Lembrar de mim</label>
