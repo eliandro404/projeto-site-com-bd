@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 $host = 'localhost';
 $port = '5432';
 $dbname = 'PTD';
@@ -6,13 +9,14 @@ $user = 'postgres';
 $password = '123456';
 
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
+$error = "";
 
 if (!$conn) {
     die("Erro de conexão com o banco de dados");
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump($_POST);
+    // var_dump($_POST);
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
 }
@@ -28,14 +32,20 @@ if ($result) {
             header("Location: dashboard.html");
             exit;
         } else {
-            echo "Senha incorreta.";
+            $error = "Senha incorreta.";
         }
     } else {
-        echo "Usuário não encontrado.";
+        $error = "Usuário não encontrado.";
     }
 } else {
-    echo "Erro na consulta ao banco de dados.";
+    $error = "Erro na consulta ao banco de dados.";
 }
 
 pg_close($conn);
+
+if ($error) {
+    echo "<script type='text/javascript'>
+            window.location.href = 'login.html?error=' + encodeURIComponent('$error');
+          </script>";
+}
 ?>
