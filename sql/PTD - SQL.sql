@@ -9,7 +9,7 @@ CREATE TABLE usuarios (
 	email VARCHAR(50) NOT NULL UNIQUE,
 	verif_email BOOLEAN NOT NULL DEFAULT FALSE,
 	nome VARCHAR(50) NOT NULL,
- 	telefone CHAR(9) NOT NULL,
+ 	telefone CHAR(9),
  	img_perfil VARCHAR(1024),
   	criado_em DATE NOT NULL
 );
@@ -248,7 +248,7 @@ SELECT u.nome AS usuario, p.nome AS plano, a.data_inicio, a.data_fim, sa.nome AS
 FROM assinaturas a
 JOIN usuarios u ON a.id_usuario = u.id_usuario
 JOIN planos p ON a.id_plano = p.id_plano
-JOIN status_assinatura sa ON a.status = sa.id_status
+JOIN status_assinatura sa ON a.status = sa.id_status;
 
 -- Relatório de receita por período
 SELECT EXTRACT(MONTH FROM p.data) AS mes, EXTRACT(YEAR FROM p.data) AS ano,
@@ -257,3 +257,5 @@ FROM pagamentos p
 WHERE p.status = 1
 GROUP BY EXTRACT(MONTH FROM p.data), EXTRACT(YEAR FROM p.data)
 ORDER BY ano, mes;
+
+select * from usuarios
