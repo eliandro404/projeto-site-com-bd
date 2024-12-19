@@ -176,7 +176,6 @@ hr {
     height: 2px;
     width: 100%; /* Define a largura como 100% do contêiner */
     background-color: white
-    border: none; 
 }
 
 .row-content {
