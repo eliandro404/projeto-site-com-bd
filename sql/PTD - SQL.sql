@@ -101,14 +101,14 @@ CREATE TABLE plano_parcerias (
 -- Código dos Inserts na tabela
 INSERT INTO usuarios (login, senha, email, verif_email, nome, telefone, img_perfil, criado_em)
 VALUES
-('user1', 'senha123', 'user1@email.com', TRUE, 'João Silva', '123456789', NULL, '2024-01-01'),
-('user2', 'senha456', 'user2@email.com', TRUE, 'Maria Oliveira', '234567890', NULL, '2024-02-15'),
-('user3', 'senha789', 'user3@email.com', TRUE, 'Carlos Santos', '345678901', NULL, '2024-03-10'),
-('user4', 'senha012', 'user4@email.com', TRUE, 'Ana Costa', '456789012', NULL, '2024-04-05'),
+('user1', 'senha123', 'user1@email.com', TRUE, 'João Siqueira', '123456789', 'https://avatarfiles.alphacoders.com/174/thumb-1920-174649.jpg', '2024-01-01'),
+('user2', 'senha456', 'user2@email.com', TRUE, 'Maria Vitória', '234567890', 'https://steamuserimages-a.akamaihd.net/ugc/2054253104253001427/63E652752CF6AB331F8825AEF046C0E818AF877E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', '2024-02-15'),
+('user3', 'senha789', 'user3@email.com', TRUE, 'Carlos Santos', '345678901', 'https://wallpapers.com/images/hd/xbox-pfp-bubble-n1st6itb1n6zb2cf.jpg', '2024-03-10'),
+('user4', 'senha012', 'user4@email.com', TRUE, 'Ana Costa', '456789012', 'https://cdn.pfps.gg/pfps/9200-billie-eilish-1.png', '2024-04-05'),
 ('user5', 'senha345', 'user5@email.com', TRUE, 'Pedro Lima', '567890123', NULL, '2024-05-10'),
-('user6', 'senha678', 'user6@email.com', TRUE, 'Cláudia Pereira', '678901234', NULL, '2024-06-01'),
-('user7', 'senha901', 'user7@email.com', TRUE, 'Ricardo Almeida', '789012345', NULL, '2024-07-15'),
-('user8', 'senha234', 'user8@email.com', FALSE, 'Juliana Costa', '890123456', NULL, '2024-08-20'),
+('user6', 'senha678', 'user6@email.com', TRUE, 'Cláudia Pereira', NULL, NULL, '2024-06-01'),
+('user7', 'senha901', 'user7@email.com', TRUE, 'Ricardo Almeida', NULL, NULL, '2024-07-15'),
+('user8', 'senha234', 'user8@email.com', FALSE, 'Juliana Costa', NULL, NULL, '2024-08-20'),
 ('user9', 'senha567', 'user9@email.com', FALSE,'Roberto Silva', '901234567', NULL, '2024-09-10'),
 ('user10', 'senha458', 'user10@email.com', FALSE,'Roberto Silva', '654721234', NULL, '2024-10-09');
 
@@ -258,4 +258,26 @@ WHERE p.status = 1
 GROUP BY EXTRACT(MONTH FROM p.data), EXTRACT(YEAR FROM p.data)
 ORDER BY ano, mes;
 
+-- Relatório de pagamentos
+SELECT p.id_pagamento AS "ID do Pagamento", u.id_usuario AS "ID do Pagador",
+TO_CHAR(p.data, 'DD/MM/YYYY HH24:MI:SS') AS "Data do Pagamento",
+p.valor AS "Valor (R$)", mp.nome AS "Método de Pagamento",
+sp.nome AS "Status do Pagamento"
+FROM pagamentos p
+JOIN assinaturas a ON p.id_pagamento = a.id_pagamento
+JOIN usuarios u ON a.id_usuario = u.id_usuario
+JOIN metodo_pagamento mp ON p.metodo = mp.id_pagamento
+JOIN status_pagamento sp ON p.status = sp.id_status
+ORDER BY 
+    p.data DESC;
+
+-- Relatório dos métodos de pagamento
+SELECT  mp.nome AS "Método de Pagamento",
+COUNT(p.id_pagamento) AS "Quantidade de Pagamentos", SUM(p.valor) AS "Total Recebido (R$)"
+FROM pagamentos p
+JOIN metodo_pagamento mp ON p.metodo = mp.id_pagamento
+WHERE p.status = 1 -- Apenas pagamentos com status 'Pago'
+GROUP BY mp.nome
+ORDER BY "Total Recebido (R$)" DESC;
+	
 select * from usuarios
