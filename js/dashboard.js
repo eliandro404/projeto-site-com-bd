@@ -4,7 +4,13 @@ const appPage = document.querySelector(".app-page")
 const sideBarMenu = document.querySelector(".sidebar-menu-body")
 const tabButtons = document.querySelectorAll(".tab-button")
 const active = document.querySelector(".active")
+
 let paddingApplied = false;
+
+let imageContainer = document.querySelector('.profile-image');
+// imageContainer.style.backgroundImage = `url('${imgPerfil}')`;
+imageContainer.style.backgroundImage = `url('${imgPerfil || 'images/dashboard/default_pfp.jpg'}')`;
+
 
 sideBar.addEventListener("click", (event) => {
     const button = event.target.closest(".sidebar-button");
@@ -13,14 +19,17 @@ sideBar.addEventListener("click", (event) => {
     // buttons.forEach(appPage.classList.remove("showing"))
 
     if (button.id === "profile-menu" || button.id === "help-menu" || button.id === "settings-menu") {
-        sideBarMenu.classList.add("showing")
-        if (paddingApplied) {
-            appPage.style.paddingLeft = "0px";
-        } else {
-            appPage.style.paddingLeft = "250px";
-        }
-        paddingApplied = !paddingApplied
-    }
+        if (button.id === "profile-menu") {
+            sideBarMenu.classList.toggle("showing")
+            button.classList.toggle("active")
+            if (paddingApplied) {
+                appPage.style.paddingLeft = "0px";
+            } else {
+                appPage.style.paddingLeft = "250px";
+            }
+            paddingApplied = !paddingApplied
+            }
+        }     
 })
 
 tabButtons.forEach(button => {

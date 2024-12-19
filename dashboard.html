@@ -69,9 +69,41 @@
         </div>
 
         <div class="sidebar-menu-body">
-            <!-- <div class="menu-body-main">
-
-            </div> -->
+            <div class="profile-screen">
+                <span>Minha Conta</span>
+                <div class="profile-screen-background" id="lower-background">
+                    <div class="profile-image">
+                    </div>
+                    <div class="row" id="profile-name">
+                        <span class="row-content">
+                            <?php echo htmlspecialchars($nome); ?>
+                        </span>
+                    </div>
+                    <hr>
+                   <div class="row">
+                        <span class="row-title">Username: </span>
+                        <span class="row-content"><?php echo htmlspecialchars($usuario); ?></span>
+                   </div>
+                   <div class="row">
+                        <span class="row-title">Mail: </span>
+                        <span class="row-content"><?php echo htmlspecialchars($email); ?></span>
+                   </div>
+                   <div class="row">
+                        <span class="row-title">Cell: </span>
+                        <span class="row-content"><?php echo htmlspecialchars($telefone); ?></span>
+                   </div>
+                   <div class="row" id="button-row">
+                        <form action="logout.php" method="post" style="display: inline;">
+                            <button type="submit" class="sidebar-button" id="logout-button">
+                                <span class="sidebar-button-icon">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                </span>
+                                <span class="sidebar-button-text">Sair</span>
+                            </button>
+                        </form>
+                   </div>
+                </div>
+            </div>
         </div>
 
         <div class="app-page">
@@ -207,7 +239,9 @@
             </main>
         </div>
     </div>     
-
+    <script>
+            const imgPerfil = '<?php echo $img_perfil; ?>';
+    </script>
     <script src="js/dashboard.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

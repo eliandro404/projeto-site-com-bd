@@ -31,8 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($user_data) {
                 if ($senha === $user_data['senha']) {
+                    session_start();
+                    $usuario = $_SESSION['usuario'] = $user_data['login'];
+                    $nome = $_SESSION['nome'] = $user_data['nome'];
+                    $email = $_SESSION['email'] = $user_data['email'];
+                    $telefone = $_SESSION['telefone'] = $user_data['telefone'] ?? 'Telefone não informado';
+                    $img_perfil = $_SESSION['img_perfil'] = $user_data['img_perfil'];
+                     
+                    include 'dashboard.html';
                     header("Location: dashboard.html");
                     exit;
+        exit;
                 } else {
                     $error = "Senha incorreta.";
                 }
